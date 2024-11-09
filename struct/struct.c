@@ -1,17 +1,15 @@
 #include <stdio.h>
+
+struct Student {
+    int rollNumber;
+    char name[50];
+    float marks;
+};
+
 int main() {
-    char operator;
-    double num1, num2;
-    printf("Enter operator (+, -, *, /): ");
-    scanf("%c", &operator);
-    printf("Enter two operands: ");
-    scanf("%lf %lf", &num1, &num2);
-    switch(operator) {
-        case '+': printf("%.2lf\n", num1 + num2); break;
-        case '-': printf("%.2lf\n", num1 - num2); break;
-        case '*': printf("%.2lf\n", num1 * num2); break;
-        case '/': printf("%.2lf\n", num1 / num2); break;
-        default: printf("Error! operator is not correct\n");
-    }
+    struct Student student;
+    printf("Enter roll number, name, and marks: ");
+    scanf("%d %s %f", &student.rollNumber, student.name, &student.marks);
+    printf("Roll No: %d\nName: %s\nMarks: %.2f\n", student.rollNumber, student.name, student.marks);
     return 0;
 }
