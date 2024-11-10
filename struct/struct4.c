@@ -1,15 +1,19 @@
 #include <stdio.h>
+
+struct Address {
+    char city[50];
+    int pin;
+};
+
+struct Person {
+    char name[50];
+    struct Address address;
+};
+
 int main() {
-    int n1, n2, max;
-    printf("Enter two integers: ");
-    scanf("%d %d", &n1, &n2);
-    max = (n1 > n2) ? n1 : n2;
-    while (1) {
-        if (max % n1 == 0 && max % n2 == 0) {
-            printf("LCM = %d\n", max);
-            break;
-        }
-        ++max;
-    }
+    struct Person person;
+    printf("Enter name, city, and pin: ");
+    scanf("%s %s %d", person.name, person.address.city, &person.address.pin);
+    printf("Name: %s\nCity: %s\nPin: %d\n", person.name, person.address.city, person.address.pin);
     return 0;
 }
